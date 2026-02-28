@@ -45,10 +45,10 @@ const config = {
   },
   social: {
     twitter: "https://x.com/nothotchaddi",
-    linkedin: "https://www.linkedin.com/in/ruturaj-jagdale/",
-    instagram: "https://www.instagram.com/ruturajjagdale",
+    linkedin: "https://www.linkedin.com/in/ruturaj-jagdale-8b267b2a5/",
+    instagram: "https://www.instagram.com/ruturaj__jagdale?igsh=YnZiYTM3dTBrb3R5",
     facebook: "https://www.facebook.com/ruturaj.jagdale",
-    github: "https://github.com/ruturajjagdale",
+    github: "https://github.com/Ruturaj-stack",
   },
 };
 export { config };

@@ -11,7 +11,7 @@ import {
 import { usePreloader } from "../preloader";
 import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
-import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
+import { SiGithub, SiLinkedin, SiX, SiInstagram } from "react-icons/si";
 import { config } from "@/data/config";
 
 import SectionWrapper from "../ui/section-wrapper";
@@ -83,9 +83,10 @@ const HeroSection = () => {
               <div className="mt-8 flex flex-col gap-3 w-fit">
                 <Link
                   href={
-                    "https://drive.google.com/file/d/1MTSsUA8V7Po2AsNXT8kZ5sLOpzC8l7qm/view?usp=sharing"
+                    "Ruturaj_Cv.pdf"
                   }
                   target="_blank"
+                  download
                   className="flex-1"
                 >
                   <BoxReveal delay={2} width="100%" >
@@ -136,6 +137,15 @@ const HeroSection = () => {
                     >
                       <Button variant={"outline"}>
                         <SiLinkedin size={24} />
+                      </Button>
+                    </Link>
+                    <Link
+                      href={config.social.instagram}
+                      target="_blank"
+                      className="cursor-can-hover"
+                    >
+                      <Button variant={"outline"}>
+                        <SiInstagram size={24} />
                       </Button>
                     </Link>
                   </div>
