@@ -1,22 +1,23 @@
 const config = {
-  title: "Ruturaj Jagdale | React Frontend Developer | Full Stack Developer",
+  title: "Ruturaj Jagdale | React Frontend Developer",
   description: {
-    long: "Explore the portfolio of Ruturaj, a React Frontend Developer at Lockated specializing in modern web technologies. Discover my latest work including DevTinder, EasyLeads, and other interactive projects. Currently building innovative web solutions with React, Next.js, and TypeScript. Let's build something amazing together!",
+    long: "Portfolio of Ruturaj Jagdale, React Frontend Developer specializing in ReactJS, TypeScript, Next.js, responsive web applications, REST API integration and modern frontend development.",
     short:
-      "Discover the portfolio of Ruturaj, a React Frontend Developer creating interactive web experiences, full-stack applications, and innovative projects.",
+      "Portfolio of Ruturaj Jagdale, React Frontend Developer specializing in ReactJS, TypeScript, Next.js, responsive web applications, API integration and modern frontend development.",
   },
   keywords: [
     "Ruturaj",
     "portfolio",
     "React frontend developer",
-    "React Frontend Developer Lockated",
-    "full stack developer",
+    "React Frontend Developer",
+    "responsive web applications",
     "creative technologist",
     "web development",
     "3D animations",
     "interactive websites",
     "DevTinder",
-    "EasyLeads",
+    "Nexora",
+    "PropSmart",
     "Coding Ducks",
     "The Booking Desk",
     "Ghostchat",
@@ -33,11 +34,11 @@ const config = {
     "Framer Motion",
   ],
   author: "Ruturaj Jagdale",
-  email: "ruturajagdale07@gmail.com",
+  email: "ruturajjagdale@gmail.com",
   site: "https://ruturajjagdale.site",
 
   // for github stars button
-  githubUsername: "ruturajjagdale",
+  githubUsername: "Ruturaj-stack",
   githubRepo: "3d-portfolio",
 
   get ogImg() {

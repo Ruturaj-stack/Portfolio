@@ -30,25 +30,25 @@ import {
 import { TbBrandFramerMotion } from "react-icons/tb";
 const BASE_PATH = "/assets/projects-screenshots";
 
-const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
+const ProjectsLinks = ({ live, repo }: { live?: string; repo?: string }) => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
-      <Link
+      {live && <Link
         className="font-mono underline flex gap-2"
-        rel="noopener"
-        target="_new"
+        rel="noopener noreferrer"
+        target="_blank"
         href={live}
       >
         <Button variant={"default"} size={"sm"}>
           Visit Website
           <ArrowUpRight className="ml-3 w-5 h-5" />
         </Button>
-      </Link>
+      </Link>}
       {repo && (
         <Link
           className="font-mono underline flex gap-2"
-          rel="noopener"
-          target="_new"
+          rel="noopener noreferrer"
+          target="_blank"
           href={repo}
         >
           <Button variant={"default"} size={"sm"}>
@@ -238,9 +238,51 @@ export type Project = {
   skills: { frontend: Skill[]; backend: Skill[] };
   content: React.ReactNode | any;
   github?: string;
-  live: string;
+  live?: string;
+  period?: string;
 };
 const projects: Project[] = [
+  {
+    id: "nexora",
+    category: "AI & Productivity",
+    title: "Nexora — AI-Powered Personal Assistant Platform",
+    period: "2026 – Present",
+    src: "",
+    screenshots: [],
+    github: "https://github.com/Ruturaj-stack/nexora-glow",
+    skills: {
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.ts, PROJECT_SKILLS.tailwind],
+      backend: [PROJECT_SKILLS.supabase],
+    },
+    content: (
+      <div className="space-y-4">
+        <TypographyP>Developed an AI-powered personal assistant platform with a responsive interface that brings conversational assistance and productivity workflows into one application.</TypographyP>
+        <TypographyP>Built with React, TypeScript, TanStack Router and Tailwind CSS using a reusable component-based architecture. Integrated Supabase services and established the foundation for conversational interactions and assistant capabilities.</TypographyP>
+        <ProjectsLinks repo="https://github.com/Ruturaj-stack/nexora-glow" />
+      </div>
+    ),
+  },
+  {
+    id: "propsmart",
+    category: "Real Estate",
+    title: "PropSmart — Real Estate Management Platform",
+    period: "July 2025 – Present",
+    src: "",
+    screenshots: [],
+    live: "https://prop-smart-six.vercel.app/",
+    github: "https://github.com/Ruturaj-stack/PropSmart",
+    skills: {
+      frontend: [PROJECT_SKILLS.next, PROJECT_SKILLS.ts],
+      backend: [PROJECT_SKILLS.postgres, PROJECT_SKILLS.prisma],
+    },
+    content: (
+      <div className="space-y-4">
+        <TypographyP>Developed a full-stack real estate management platform for managing properties, buyers, tenants and business operations through a centralized dashboard.</TypographyP>
+        <TypographyP>Implemented property management, customer tracking, search, filtering and role-based workflows. Built responsive Next.js interfaces and integrated PostgreSQL operations with Prisma ORM, including data handling and validation.</TypographyP>
+        <ProjectsLinks live="https://prop-smart-six.vercel.app/" repo="https://github.com/Ruturaj-stack/PropSmart" />
+      </div>
+    ),
+  },
   {
     id: "devtinder",
     category: "Social Networking",

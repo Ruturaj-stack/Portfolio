@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
-import { File, Github, Linkedin } from "lucide-react";
+import { File, FolderOpen, Mail } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -11,7 +11,7 @@ import {
 import { usePreloader } from "../preloader";
 import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
-import { SiGithub, SiLinkedin, SiX, SiInstagram } from "react-icons/si";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 import { config } from "@/data/config";
 
 import SectionWrapper from "../ui/section-wrapper";
@@ -76,26 +76,26 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
                     )}
                   >
-                    A Full Stack Web Developer
+                    React Frontend Developer
                   </p>
                 </BlurIn>
+                <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-600 dark:text-zinc-300 sm:text-base">
+                  I build responsive web applications, reusable UI components, enterprise dashboards and REST API integrations with modern frontend technologies.
+                </p>
               </div>
               <div className="mt-8 flex flex-col gap-3 w-fit">
-                <Link
-                  href={
-                    "Ruturaj_Cv.pdf"
-                  }
-                  target="_blank"
-                  download
-                  className="flex-1"
-                >
-                  <BoxReveal delay={2} width="100%" >
-                    <Button className="flex items-center gap-2 w-full">
-                      <File size={24} />
-                      <p>Resume</p>
+                <div className="flex flex-wrap gap-3">
+                  <Link href="#projects" className="flex-1">
+                    <BoxReveal delay={2} width="100%">
+                      <Button className="flex items-center gap-2 w-full"><FolderOpen size={20} />View Projects</Button>
+                    </BoxReveal>
+                  </Link>
+                  <Link href="/assets/Ruturaj-Jagdale-CV.pdf" download="Ruturaj-Jagdale-CV.pdf" className="flex-1">
+                    <Button variant="outline" className="flex w-full items-center gap-2">
+                      <File size={20} />Download CV
                     </Button>
-                  </BoxReveal>
-                </Link>
+                  </Link>
+                </div>
                 <div className="md:self-start flex gap-3">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
@@ -104,7 +104,7 @@ const HeroSection = () => {
                           variant={"outline"}
                           className="block w-full overflow-hidden"
                         >
-                          Hire Me
+                          Contact Me
                         </Button>
                       </Link>
                     </TooltipTrigger>
@@ -114,16 +114,8 @@ const HeroSection = () => {
                   </Tooltip>
                   <div className="flex items-center h-full gap-2">
                     <Link
-                      href={config.social.twitter}
-                      target="_blank"
-                    >
-                      <Button variant={"outline"}>
-                        <SiX size={24} />
-                      </Button>
-                    </Link>
-                    <Link
                       href={config.social.github}
-                      target="_blank"
+                      target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"
                       className="cursor-can-hover"
                     >
                       <Button variant={"outline"}>
@@ -132,22 +124,14 @@ const HeroSection = () => {
                     </Link>
                     <Link
                       href={config.social.linkedin}
-                      target="_blank"
+                      target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"
                       className="cursor-can-hover"
                     >
                       <Button variant={"outline"}>
                         <SiLinkedin size={24} />
                       </Button>
                     </Link>
-                    <Link
-                      href={config.social.instagram}
-                      target="_blank"
-                      className="cursor-can-hover"
-                    >
-                      <Button variant={"outline"}>
-                        <SiInstagram size={24} />
-                      </Button>
-                    </Link>
+                    <a href={`mailto:${config.email}`} aria-label="Email Ruturaj"><Button variant="outline"><Mail size={20} /></Button></a>
                   </div>
                 </div>
               </div>

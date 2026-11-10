@@ -14,19 +14,26 @@ const ExperienceSection = () => {
       <div className="w-full max-w-4xl px-4 md:px-8 mx-auto">
         <SectionHeader
           id="experience"
-          title="Experience"
-          desc="My professional journey."
+          title="Professional Experience"
+          desc="Building responsive products and frontend features."
           className="mb-12 md:mb-20 mt-0"
         />
 
+        <h3 className="mb-5 text-xl font-semibold">Employment</h3>
         <div className="flex flex-col gap-8 md:gap-12 relative">
           {/* Connector Line - simplified to a subtle border */}
           <div className="absolute left-8 md:left-1/2 top-4 bottom-4 w-px bg-border hidden md:block -translate-x-1/2" />
 
-          {EXPERIENCE.map((exp, index) => (
+          {EXPERIENCE.filter((exp) => exp.employmentType !== "Internship").map((exp, index) => (
             <div key={exp.id} className="relative">
               <ExperienceCard experience={exp} index={index} />
             </div>
+          ))}
+        </div>
+        <h3 className="mb-5 mt-12 text-xl font-semibold">Internship Experience</h3>
+        <div className="flex flex-col gap-8 relative">
+          {EXPERIENCE.filter((exp) => exp.employmentType === "Internship").map((exp, index) => (
+            <div key={exp.id} className="relative"><ExperienceCard experience={exp} index={index} /></div>
           ))}
         </div>
       </div>
@@ -68,6 +75,7 @@ const ExperienceCard = ({
               <div className="text-base font-medium text-muted-foreground">
                 {experience.company}
               </div>
+              <div className="text-sm text-muted-foreground">{experience.employmentType}</div>
             </div>
             <Badge variant="secondary" className="w-fit font-mono text-xs font-normal">
               {experience.startDate} - {experience.endDate}

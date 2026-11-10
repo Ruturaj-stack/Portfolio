@@ -294,6 +294,7 @@ export type Experience = {
   endDate: string;
   title: string;
   company: string;
+  employmentType: string;
   description: string[];
   skills: SkillNames[];
 };
@@ -301,127 +302,49 @@ export type Experience = {
 export const EXPERIENCE: Experience[] = [
   {
     id: 1,
-    startDate: "Present",
+    startDate: "November 2025",
     endDate: "Present",
     title: "React Frontend Developer",
-    company: "Lockated",
+    company: "Haven Infoline Pvt. Ltd.",
     description: [
-      "Developing responsive and interactive user interfaces using React and modern web technologies.",
-      "Collaborating with the team to build and maintain live projects.",
-      "Contributing to the development of full-stack applications.",
-      "Building innovative web solutions for real-world applications.",
+      "Developed and maintained responsive web applications using ReactJS, JavaScript, TypeScript and modern frontend technologies.",
+      "Built reusable UI components and dynamic interfaces with a focus on maintainability and cross-device compatibility.",
+      "Integrated REST APIs, handled responses, implemented dynamic features and managed frontend data flows.",
+      "Worked on enterprise modules for dashboards, reports, user management and workflow enhancements.",
+      "Resolved UI bugs, improved application functionality and collaborated with teammates to meet project deadlines.",
     ],
+    employmentType: "Permanent Employee",
     skills: [
       SkillNames.REACT,
       SkillNames.TS,
-      SkillNames.NEXTJS,
-      SkillNames.TAILWIND,
       SkillNames.JS,
     ],
   },
   {
     id: 2,
-    startDate: "Jul 2025",
-    endDate: "Present",
-    title: "Full Stack Developer",
-    company: "Self-employed",
-    description: [
-      "Built EasyLeads - a full-stack real estate buyer management platform for agents.",
-      "Implemented lead management with categorized status tracking (New, Contacted, Negotiation, Converted).",
-      "Integrated data export/import functionality and optimized database operations using Prisma ORM.",
-      "Developing scalable solutions with Next.js and modern technologies.",
-    ],
-    skills: [
-      SkillNames.NEXTJS,
-      SkillNames.TS,
-      SkillNames.PRISMA,
-      SkillNames.POSTGRES,
-      SkillNames.ZOD,
-      SkillNames.TAILWIND,
-    ],
-  },
-  {
-    id: 3,
-    startDate: "Jan 2025",
-    endDate: "Mar 2025",
-    title: "Full Stack Developer",
-    company: "Self-employed",
-    description: [
-      "Created DevTinder - a Tinder-style matchmaking platform for developers.",
-      "Architected a real-time connection management system using Express.js and MongoDB.",
-      "Handled friend requests and user matching logic with JWT authentication.",
-      "Implemented secure backend APIs and responsive frontend with React.",
-    ],
-    skills: [
-      SkillNames.REACT,
-      SkillNames.NODEJS,
-      SkillNames.EXPRESS,
-      SkillNames.MONGODB,
-      SkillNames.JS,
-      SkillNames.TS,
-    ],
-  },
-  {
-    id: 4,
-    startDate: "Jun 2025",
-    endDate: "Jul 2025",
-    title: "Python Intern",
+    startDate: "June 2024",
+    endDate: "July 2024",
+    title: "Python Developer Intern",
     company: "Haven Infoline Pvt. Ltd. (Lockated)",
     description: [
-      "Completed a one-month internship focused on Python-based backend development and automation.",
-      "Gained hands-on experience writing efficient, modular, and well-documented Python scripts.",
-      "Demonstrated strong problem-solving, learning aptitude, and collaboration skills.",
-      "Applied knowledge to real-world applications and professional development tasks.",
+      "Completed an internship focused on Python backend development and automation tasks.",
+      "Developed modular Python scripts and gained practical experience in backend programming, debugging and problem-solving.",
+      "Collaborated with teammates under professional mentorship to learn development workflows and complete assigned tasks.",
     ],
+    employmentType: "Internship",
     skills: [SkillNames.PYTHON, SkillNames.NODEJS, SkillNames.GIT],
   },
-  {
-    id: 5,
-    startDate: "Dec 2024",
-    endDate: "Present",
-    title: "Full Stack Developer",
-    company: "OmniNexus Sdn Bhd",
-    description: [
-      "Built a custom image editor from scratch, cutting $4.8k/year in SaaS costs.",
-      "Architected async job queues processing 1k+ AI tasks daily with bulletproof reliability.",
-      "Optimized media delivery pipeline, slashing asset load times by 40%.",
-      "Shipped high-impact features end-to-end from requirements to production.",
-    ],
-    skills: [
-      SkillNames.NEXTJS,
-      SkillNames.TS,
-      SkillNames.REACT,
-      SkillNames.NODEJS,
-      SkillNames.POSTGRES,
-      SkillNames.MONGODB,
-      SkillNames.DOCKER,
-      SkillNames.GCP,
-    ],
-  },
-  {
-    id: 6,
-    startDate: "Apr 2022",
-    endDate: "Dec 2024",
-    title: "Freelance Full Stack Developer",
-    company: "Self-employed",
-    description: [
-      "Transformed chaotic Excel sheets into polished internal tools for various clients.",
-      "Shipped dashboards and custom CMS platforms tailored to each client's workflow.",
-      "Automated repetitive processes, improving efficiency and reducing human error.",
-      "Focused on clean, maintainable code and interfaces that users actually enjoy.",
-    ],
-    skills: [
-      SkillNames.REACT,
-      SkillNames.VUE,
-      SkillNames.NODEJS,
-      SkillNames.EXPRESS,
-      SkillNames.MONGODB,
-      SkillNames.POSTGRES,
-      SkillNames.TAILWIND,
-      SkillNames.WORDPRESS,
-    ],
-  },
 ];
+
+export const SKILL_GROUPS = [
+  { title: "Programming Languages", skills: ["JavaScript", "TypeScript", "Java", "Python", "C", "C++", "SQL", "HTML", "CSS"] },
+  { title: "Frontend Technologies", skills: ["ReactJS", "Next.js", "TanStack Router", "Redux", "Zustand", "React Query", "Relay", "Bootstrap", "Tailwind CSS", "SASS"] },
+  { title: "Backend Technologies", skills: ["Node.js", "Express.js", "REST API Integration", "Supabase"] },
+  { title: "Databases", skills: ["MySQL", "MongoDB", "PostgreSQL"] },
+  { title: "Developer Tools", skills: ["Git", "GitHub", "VS Code", "Vite"] },
+];
+
+export const SOFT_SKILLS = ["Problem Solving", "Communication", "Debugging", "Team Collaboration", "Technical Documentation", "Code Quality"];
 
 export const themeDisclaimers = {
   light: [

@@ -24,7 +24,9 @@ const ProjectsSection = () => {
       <SectionHeader id='projects' title="Projects" />
       <div className="grid grid-cols-1 md:grid-cols-3">
         {projects.map((project, index) => (
-          <Modall key={project.id} project={project} />
+          <div key={project.id} className={project.id === "nexora" ? "md:col-span-2" : ""}>
+            <Modall project={project} />
+          </div>
         ))}
       </div>
     </SectionWrapper>
@@ -39,13 +41,19 @@ const Modall = ({ project }: { project: Project }) => {
             className="relative w-[400px] h-auto rounded-lg overflow-hidden"
             style={{ aspectRatio: "3/2" }}
           >
-            <Image
-              className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all"
-              src={project.src}
-              alt={project.title}
-              width={300}
-              height={300}
-            />
+            {project.src ? (
+              <Image
+                className="absolute w-full h-full top-0 left-0 hover:scale-[1.05] transition-all"
+                src={project.src}
+                alt={`${project.title} project preview`}
+                width={300}
+                height={300}
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 p-6 text-center transition-transform group-hover/modal-btn:scale-[1.03]">
+                <span className="text-3xl font-semibold tracking-tight text-white md:text-4xl">{project.id === "nexora" ? "NEXORA" : "PropSmart"}</span>
+              </div>
+            )}
             <div className="absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black via-black/85 to-transparent pointer-events-none">
               <div className="flex flex-col h-full items-start justify-end p-6">
                 <div className="text-lg text-left">{project.title}</div>
@@ -66,11 +74,11 @@ const Modall = ({ project }: { project: Project }) => {
             <button className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
               Cancel
             </button>
-            <Link href={project.live} target="_blank">
+            {project.live && <Link href={project.live} target="_blank" rel="noopener noreferrer">
               <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
-                Visit
+                Visit live site
               </button>
-            </Link>
+            </Link>}
           </ModalFooter>
         </ModalBody>
       </Modal>
@@ -85,6 +93,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
       <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
         {project.title}
       </h4>
+      {project.period && <p className="-mt-6 mb-6 text-center text-sm text-muted-foreground">{project.period}</p>}
       <div className="flex flex-col md:flex-row md:justify-evenly max-w-screen overflow-hidden md:overflow-visible">
         <div className="flex flex-row md:flex-col-reverse justify-center items-center gap-2 text-3xl mb-8">
           <p className="text-sm mt-1 text-neutral-600 dark:text-neutral-500">

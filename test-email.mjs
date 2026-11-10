@@ -1,6 +1,8 @@
 import { Resend } from "resend";
 
-const resend = new Resend("re_RETLS3X4_2mMfi9YtMYHXVDQQv2oKRYQk");
+const apiKey = process.env.RESEND_API_KEY;
+if (!apiKey) throw new Error("Set RESEND_API_KEY before running this script.");
+const resend = new Resend(apiKey);
 
 console.log("Testing Resend API...");
 
